@@ -1,14 +1,20 @@
 # frozen_string_literal: true
 
-require "action_controller"
-require "action_controller/test_case"
-require "action_view"
-
 module ViewComponent
   module Form
-    module TestHelpers
-      def form_with(object, options = {})
-        ViewComponent::Form::Builder.new(object_name, object, template, options)
+    class LabelComponentPreview < ViewComponent::Preview
+      def test
+        render ViewComponent::Form::LabelComponent.new(form_builder, object_name, :first_name)
+      end
+
+      private
+
+      def form_builder
+        @form_builder ||= ViewComponent::Form::Builder.new(object_name, object, template, {})
+      end
+
+      def object
+        OpenStruct.new
       end
 
       def object_name
