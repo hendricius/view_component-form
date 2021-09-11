@@ -18,7 +18,9 @@ gem "rubocop-rspec", require: false
 gem "simplecov", require: false, group: :test
 
 group :development do
-  gem "lookbook", require: false
+  gem "view_component", require: "view_component/engine"
+
+  gem "lookbook"
   gem "puma"
   gem "sqlite3"
 end
