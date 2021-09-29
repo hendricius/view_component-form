@@ -8,6 +8,8 @@ require "bundler"
 Bundler.require(:default, :development)
 
 Combustion.initialize! :all do
+  config.load_defaults Rails.gem_version.segments[0..1].join("."
+
   config.logger = ActiveSupport::TaggedLogging.new(Logger.new(nil))
   config.log_level = :fatal
 
