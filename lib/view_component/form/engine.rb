@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require "rails/engine"
+require "view_component"
+require "action_text/engine"
+require "view_component/form"
 
 module ViewComponent
   module Form
